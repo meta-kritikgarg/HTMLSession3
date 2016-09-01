@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "Click counts = " + localStorage.clickcount ;
+    } else {
+        document.getElementById("result").innerHTML = "Browser not support storage";
+    }
+}
+</script>
+</head>
+<body>
+<h2>Local storage demo</h2>
+<p><button onclick="clickCounter()" type="button">Click for +1</button></p>
+<div id="result"></div>
+<p>Click the button</p>
+
+</body>
+</html>
